@@ -2,7 +2,7 @@ import express from 'express';
 import { v4 } from 'uuid';
 import cors from 'cors';
 
-const port = 3001;
+const PORT = process.env.PORT || 3001;
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -57,4 +57,4 @@ app.delete('/order/:id', chekUserId, (request, response) => {
 });
 
 
-app.listen(port, () => { console.log(`🚀 Serve start ${port}`) }); // porta 3000 / localhost-> é nossa propria maquina
+app.listen(PORT, () => { console.log(`🚀 Serve start ${PORT}`) }); // porta 3000 / localhost-> é nossa propria maquina
